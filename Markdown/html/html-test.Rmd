@@ -1,0 +1,43 @@
+---
+title: "متن فارسی"
+author: "فواد اسماعیلی"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2:
+    css: "cssFile.css"
+    fig_caption: yes
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# بخش اول
+## زیر بخش اول
+# بخش دوم
+# بخش سوم
+
+دانشگاه نیشابور
+
+
+
+```{r, size = "red",class.source = "bg-code",class.output = "bg-warning"}
+head(iris)
+```
+این نیز یکی از متن های جذاب برای ما است.
+
+
+
+```{r iris,fig.cap="گل های زنبق"}
+plot(iris[1:4])
+```
+
+نمودار 
+\@ref(fig:iris)
+یک نمودار جذاب است
+
+این هم یک متن فارسی است که
+english word
+وسط آن قرار گرفته است.

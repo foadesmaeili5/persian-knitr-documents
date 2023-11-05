@@ -1,0 +1,119 @@
+---
+title: "فارسی نویسی در محیط \\lr{Rmarkdown} با فرمت \\lr{HTML}"
+author: "فواد اسماعیلی \\lr{(foadesmaeili5@gmail.com)}"
+output:
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    toc: false
+header-includes:
+  - \usepackage{hyperref}
+  - \usepackage{bidi}
+  - \usepackage{xepersian}
+  - \settextfont{B Nazanin}
+  - \setlatintextfont{Arial}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(RTLknitr)
+markdown_rtl()
+```
+
+برای فارسی نویسی در محیط 
+\lr{Rmarkdown}
+با فرمت 
+\lr{html}،
+نیاز است ابتدا یک فایل
+\lr{css}
+آماده کنیم، و تنظیمات مربوط به راست چین بودن متن، فونت، اندازه متن و
+$\ldots$
+را در آن تعریف کنیم،
+سپس 
+با استفاده از آروگمان
+\lr{css}
+در بخش
+\lr{header}
+آن را به فایل می‌دهیم.
+مانند دستور زیر:
+
+نکته:
+برای آنکه رفرنس دهی ها درون متن به درستی انجام شود، بهتر است تا از بسته
+\lr{bookdown}
+استفاده کنیم.
+
+```{r eval=FALSE,echo=TRUE}
+output:
+  bookdown::html_document2:
+    css: "cssFile.css"
+```
+
+فایل 
+\lr{css}
+پیشنهادی با دستورات زیر در آدرس گیتهاب اینجانب به آدرس:
+
+[\lr{https://github.com/foadesmaeili5/persian-knitr-documents.git}](https://github.com/foadesmaeili5/persian-knitr-documents.git)
+
+قرار گرفته است که می‌توانید آن را دانلود کنید.
+
+```{css eval = FALSE,echo=TRUE}
+h1{
+  direction: rtl;
+  font-size:50px;
+}
+h2{
+  direction: rtl;
+  font-size: 45px;
+}
+h3{
+  direction: rtl;
+  font-size: 40px;
+}
+h4{
+  direction: rtl;
+  font-size: 35px;
+}
+h5{
+  direction: rtl;
+  font-size: 30px;
+}
+h6{
+  direction: rtl;
+  font-size: 25px;
+}
+
+p{
+  font-size: 20px;
+  direction: rtl;
+}
+
+
+
+.bg-warning{
+  background-color: #F0F8FF;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.bg-code{
+  background-color: #FFF8DC;
+  border: 3px solid black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.caption{
+  direction: rtl;
+  text-align: center;
+}
+
+#TOC {
+  direction: rtl;
+  color: blue;
+}
+a {
+  color: red;
+  font-size: 20px;
+}
+
+```
+
